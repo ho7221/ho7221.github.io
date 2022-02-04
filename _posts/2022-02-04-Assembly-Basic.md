@@ -1,10 +1,9 @@
 ---
 layout: posts
 title: "02. Assembly Basic"
+subtitle: "바이너리 분석"
 category: Reverse Engineering
 ---
-
-# 바이너리 분석
 
 ## 1. 레지스터
 레지스터는 프로세서의 저장장치. 레지스터의 크기에 따라 32bit(x86), 64bit(x86-64)로 나눈다.   
