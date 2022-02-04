@@ -4,5 +4,5 @@ permalink: /about/
 layout: single
 ---
 
-#hokuma's blog
+# hokuma's blog
 Studying CS
