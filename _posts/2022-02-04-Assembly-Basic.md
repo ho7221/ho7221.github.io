@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: "02. Assembly Basic"
+category: Reverse Engineering
 ---
 
 # 바이너리 분석
