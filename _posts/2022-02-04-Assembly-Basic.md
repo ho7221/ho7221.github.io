@@ -3,6 +3,7 @@ layout: posts
 title: "02. Assembly Basic"
 subtitle: "바이너리 분석"
 category: Reverse Engineering
+toc: true
 ---
 
 ## 1. 레지스터
