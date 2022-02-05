@@ -1,6 +1,5 @@
 ---
-title: "02. Assembly Basic"
-subtitle: "바이너리 분석"
+title: "Assembly Basic"
 category: Reverse Engineering
 excerpt: "레지스터, 어셈블리어 기본설명"
 toc: true
