@@ -1,5 +1,5 @@
 ---
-title: "[RE] Register & Assembly Basic"
+title: "[RE]Register & Assembly Basic"
 category: Reverse Engineering
 excerpt: "레지스터, 어셈블리어 기본설명"
 toc: true
