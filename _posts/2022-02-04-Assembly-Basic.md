@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title: "02. Assembly Basic"
 subtitle: "바이너리 분석"
 category: Reverse Engineering
