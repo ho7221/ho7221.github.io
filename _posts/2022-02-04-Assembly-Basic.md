@@ -4,6 +4,9 @@ title: "02. Assembly Basic"
 subtitle: "바이너리 분석"
 category: Reverse Engineering
 toc: true
+toc_sticky : true
+toc_label : "POSTING"
+toc_icon: "blog"
 ---
 
 # 1. 레지스터
