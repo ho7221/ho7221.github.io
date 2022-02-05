@@ -9,14 +9,12 @@ toc: true
 # 1. 레지스터
 ---
 레지스터는 프로세서의 저장장치. 레지스터의 크기에 따라 32bit(x86), 64bit(x86-64)로 나눈다.   
-레지스터에는 EAX, ECX, EDX, EBX / ESI, EDI / EBP, ESP, EIP   
-/ EFLAGS / CS, SS, DS, ES, FS, GS 가 있다.  
+레지스터에는 EAX, ECX, EDX, EBX / ESI, EDI / EBP, ESP, EIP / EFLAGS / CS, SS, DS, ES, FS, GS 가 있다.  
 ![x86 register](https://user-images.githubusercontent.com/45323902/152172176-4395a8e8-8030-416e-bf19-1388188bcc05.png)
-
-![Regiter Size](https://user-images.githubusercontent.com/45323902/152172148-c8bad396-7180-4a5f-8f6d-7aa1c6b87612.png)
 
 레지스터의 크기에 따라 이름이 다르다!   
 예시로 AH, AL은 8bit, AX는 16bit, EAX는 32bit, RAX는 64bit의 레지스터이다.
+![Regiter Size](https://user-images.githubusercontent.com/45323902/152172148-c8bad396-7180-4a5f-8f6d-7aa1c6b87612.png)
 
 ## IA-32 Basic Program Execution Register
 ---
