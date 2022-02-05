@@ -30,10 +30,10 @@
     </h2>
       <!--{% include page__meta.html type=include.type %}-->
     <div>
-    {% for category_word in categories_sorted %}
+    
+    <p class="archive__item-excerpt"><i class="far fa-calendar-alt"></i> {% for category_word in categories_sorted %}
       <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="page__taxonomy-itemas p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
-    {% endfor %}
-    <p class="archive__item-excerpt"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%m/%d/%Y" }} </p>
+    {% endfor %} {{ post.date | date: "%m/%d/%Y" }} </p>
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
     </div>
   </article>
