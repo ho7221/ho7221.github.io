@@ -20,7 +20,6 @@ toc_icon: "bars"
 ![Regiter Size](https://user-images.githubusercontent.com/45323902/152172148-c8bad396-7180-4a5f-8f6d-7aa1c6b87612.png)
 
 ## IA-32 Basic Program Execution Register
----
 ### General-Purpose Register
 1. AX : Accumulator Register
 2. CX : Counter Register
@@ -50,7 +49,6 @@ toc_icon: "bars"
 어셈블리 설명 추가
 
 ## 어셈블리어 기본 설명
----
 어셈블리어는 AT&T 방식과 Intel 방식이 있다. 주로 Intel 방식을 이용한다.
 
 Example 1. 값 대입   
@@ -92,7 +90,6 @@ AT&T 방식에서 Mov에 l을 붙이는 이유는 오퍼랜드의 다룰 데이�
 그 외에 b,s,w,q,t 등이 있다.
 
 ## 어셈블리 명령어
----
 1. MOV(Move)
     >mov dest, src
     
