@@ -5,5 +5,5 @@ layout: single
 ---
 
 # hokuma's blog
-Studying CS
+Studying CS   
 KU Computer Science & Engineering
