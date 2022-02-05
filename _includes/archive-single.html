@@ -10,6 +10,9 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% if post.categories[0] %}
+  {% assign categories_sorted = post.categories | sort_natural %}
+
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -25,7 +28,9 @@
       {% endif %}
     </h2>
     {% include page__meta.html type=include.type %}
-    {% include page__taxonomy.html %}
+    {% for category_word in categories_sorted %}
+      <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+    {% endfor %}
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
