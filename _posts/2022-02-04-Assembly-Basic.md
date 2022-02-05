@@ -4,7 +4,7 @@ category: Reverse Engineering
 excerpt: "레지스터, 어셈블리어 기본설명"
 toc: true
 toc_sticky: true
-toc_label: "[RE] Register & Assembly Basic"
+toc_label: "Table of Contents"
 toc_icon: "bars"
 ---
 
