@@ -24,12 +24,10 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    <p class="archive__item-excerpt" >
     {% include page__meta.html type=include.type %}
     {% if page.categories[0] %}
       {% include category-list.html %}  
     {% endif %}
-    </p>
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
