@@ -34,7 +34,7 @@ toc_icon: "bars"
 
 ### Segment Register(16-bit)
 세그먼트는 말 그대로 메모리의 조각을 말하는데, 실제 메모리 공간을 여러 부분으로 나누어 관리하는 방식이다.  
-나중에 세그먼트에 대해 따로 설명하겠다. 
+자세한 내용은 [Segment](https://ho7221.github.io/operating%20system/Segment/){:.button.button--info.button--pill}을 참조하자.  
 1. CS : Code Segment
 2. DS : Data Segment
 3. SS : Stack Segment
@@ -43,12 +43,11 @@ toc_icon: "bars"
 6. GS : G Segment (3rd ES)
 
 ### Flag Register
-플래그는 여러 시스템 상태를 True, False로 나타내는 방식이다. Flag의 종류중에 Z(ero), , C, O
-1. FLAGS
-
+![EFLAGS](https://user-images.githubusercontent.com/45323902/152793060-f78f3149-fb15-4f1b-8687-535be3fb4a7e.png)  
+플래그는 여러 시스템 상태를 True, False로 나타내는 방식이다. Flag의 종류중에 Z(ero), S(ign), C(arry), O(verflow), D(irection) 정도만 보면 될것같다.  
+1. EFLAGS
 ### Instruction Pointer
-1. IP
-
+1. EIP: 다음 실행될 명령어가 있는 위치를 CS로부터의 offset으로 가진다. 직접 변경할 수 없고 JMP, CALL, RET 등의 명령어, interrupt, exception에 의해서 변경된다. 
 # 2. 어셈블리
 ---
 어셈블리 설명 추가
