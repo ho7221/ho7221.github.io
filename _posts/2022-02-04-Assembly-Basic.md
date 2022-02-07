@@ -10,26 +10,31 @@ toc_icon: "bars"
 
 # 1. 레지스터
 ---
-레지스터는 프로세서의 저장장치. 레지스터의 크기에 따라 32bit(x86), 64bit(x86-64)로 나눈다.   
-레지스터에는 EAX, ECX, EDX, EBX / ESI, EDI / EBP, ESP, EIP / EFLAGS / CS, SS, DS, ES, FS, GS 가 있다.  
+레지스터는 프로세서의 저장장치이다. 프로세서의 종류를 레지스터의 크기에 따라 32bit(x86), 64bit(x86-64)로 나눈다.   
+레지스터의 종류로는 EAX, ECX, EDX, EBX / ESI, EDI / EBP, ESP, EIP / EFLAGS / CS, SS, DS, ES, FS, GS 가 있다.    
+이후에 하나씩 설명하겠다.
 ![x86 register](https://user-images.githubusercontent.com/45323902/152172176-4395a8e8-8030-416e-bf19-1388188bcc05.png)
 
-레지스터의 크기에 따라 이름이 다르다!   
-예시로 AH, AL은 8bit, AX는 16bit, EAX는 32bit, RAX는 64bit의 레지스터이다.
+우선 레지스터는 크기에 따라 이름이 다르기 때문에 알아두면 쓸곳이 많다.     
+예시로 AH, AL은 8bit, AX는 16bit, EAX는 32bit, RAX는 64bit의 레지스터이다. 다른 레지스터에도 똑같이 적용된다.
 ![Regiter Size](https://user-images.githubusercontent.com/45323902/152172148-c8bad396-7180-4a5f-8f6d-7aa1c6b87612.png)
-
+ 
 ## IA-32 Basic Program Execution Register
+다음은 Intel Architecture 32bit 아키텍처에서 사용하는 레지스터의 이름과 간략한 설명이다. 레지스터는 크게 4종류로 나눈다.  
+![General-Purpose Registers](https://user-images.githubusercontent.com/45323902/152739748-57b605af-700b-4e42-aca1-d0097ed746ac.png)  
 ### General-Purpose Register
-1. AX : Accumulator Register
-2. CX : Counter Register
-3. DX : Data Register
-4. BX : Base Register
-5. SI : Source Index Register
-6. DI : Destination Index Register
-7. BP : Base Pointer Register
-8. SP : Stack Pointer Register
+1. EAX(Accumulator Register): 계산에 사용되는 레지스터이며 operand, result 모두 저장한다.
+2. ECX(Counter Register): 문자열, 반복문에 사용되는 레지스터이다.
+3. EDX(Data Register): I/O 포인터로 사용된다.
+4. EBX(Base Register): DS에 속한 데이터의 포인터로 사용된다.
+5. ESI(Source Index Register): 문자열의 source pointer로 이용된다. DS에 있는 데이터 포인터.
+6. EDI(Destination Index Register): 문자열의 destination pointer로 이용된다. ES에 있는 데이터 포인터.
+7. EBP(Base Pointer Register): SS에 속한 stack base pointer. stack frame의 base pointer이다.
+8. ESP(Stack Pointer Register): SS에 속한 stack pointer. 유동적인 stack pointer이다. EBP와 ESP는 function call 방식에서 다시 다룬다.
 
 ### Segment Register(16-bit)
+세그먼트는 말 그대로 메모리의 조각을 말하는데, 실제 메모리 공간을 여러 부분으로 나누어 관리하는 방식이다.  
+나중에 세그먼트에 대해 따로 설명하겠다. 
 1. CS : Code Segment
 2. DS : Data Segment
 3. SS : Stack Segment
@@ -38,6 +43,7 @@ toc_icon: "bars"
 6. GS : G Segment (3rd ES)
 
 ### Flag Register
+플래그는 여러 시스템 상태를 True, False로 나타내는 방식이다. Flag의 종류중에 Z(ero), , C, O
 1. FLAGS
 
 ### Instruction Pointer
