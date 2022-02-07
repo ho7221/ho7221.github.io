@@ -9,7 +9,6 @@ toc_icon: "bars"
 ---
 
 # 1. 레지스터
----
 레지스터는 프로세서의 저장장치이다. 프로세서의 종류를 레지스터의 크기에 따라 32bit(x86), 64bit(x86-64)로 나눈다.   
 레지스터의 종류로는 EAX, ECX, EDX, EBX / ESI, EDI / EBP, ESP, EIP / EFLAGS / CS, SS, DS, ES, FS, GS 가 있다.    
 이후에 하나씩 설명하겠다.
@@ -49,7 +48,6 @@ toc_icon: "bars"
 ### Instruction Pointer
 1. EIP: 다음 실행될 명령어가 있는 위치를 CS로부터의 offset으로 가진다. 직접 변경할 수 없고 JMP, CALL, RET 등의 명령어, interrupt, exception에 의해서 변경된다. 
 # 2. 어셈블리
----
 어셈블리 설명 추가
 
 ## 어셈블리어 기본 설명
