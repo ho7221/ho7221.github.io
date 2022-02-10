@@ -45,8 +45,10 @@ toc_icon: "bars"
 ![EFLAGS](https://user-images.githubusercontent.com/45323902/152793060-f78f3149-fb15-4f1b-8687-535be3fb4a7e.png)  
 플래그는 여러 시스템 상태를 True, False로 나타내는 방식이다. Flag의 종류중에 Z(ero), S(ign), C(arry), O(verflow), D(irection) 정도만 보면 될것같다.  
 1. EFLAGS
+
 ### Instruction Pointer
 1. EIP: 다음 실행될 명령어가 있는 위치를 CS로부터의 offset으로 가진다. 직접 변경할 수 없고 JMP, CALL, RET 등의 명령어, interrupt, exception에 의해서 변경된다. 
+
 # 2. 어셈블리
 어셈블리 설명 추가
 
