@@ -90,9 +90,10 @@ Example 5. Size 표기
 
 Intel은 오퍼랜드가 레지스터일 경우에는 자동으로 크기를 인식하지만 메모리 주소일때는 크기를 지정해줘야 한다(SIZE PTR).  
 BYTE(8bit), WORD(16bit), DWORD(32bit), QWORD(64bit) 로 구분된다.  
+{% include note.html content="WORD는 원래 프로세서가 한번에 처리할 수 있는 데이터의 크기를 나타낸다. 하지만 Intel은 초기 16bit에서 WORD를 정의하고 바꾸지 않는다. 그래서 32bit는 Double WORD 64bit는 Quad WORD가 된 것이다." %}
+
 AT&T 방식에서 Mov에 l을 붙이는 이유는 오퍼랜드의 다룰 데이터의 크기를 나타내는 것인데, l은 long(32bit int)를 나타낸다.  
 그 외에 b,s,w,q,t 등이 있다.
-
 ## 어셈블리 명령어
 1. MOV(Move)
     >mov dest, src
