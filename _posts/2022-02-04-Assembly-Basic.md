@@ -107,6 +107,7 @@ AT&T 방식에서 Mov에 l을 붙이는 이유는 오퍼랜드의 다룰 데이�
     > - MOV [EAX],EBX // \*EAX=EBX EBX의 내용을 EAX주소가 가리키는 메모리에 대입한다.   
     > - MOV ES:[EBX], EAX // segment override라고 부르며 EBX의 기본 세그먼트 DS 대신 ES를 사용한다. EBX는 오프셋이며 이 주소가 가리키는 메모리에 EAX를 대입한다.  
     > - MOV BYTE PTR EBX,[ESI+ECX] // ESI+ECX주소의 내용을 BYTE의 크기만큼 EBX에 저장한다.   
+
 다음은 틀린 구문이다.
     > - MOV EAX,[EAX-EBX] // 레지스터는 더하기만 가능하므로 틀린 구문이다.  
     > - MOV EAX,[ESI+ECX+EDX] // 레지스터는 두개까지만 더할 수 있다.  
