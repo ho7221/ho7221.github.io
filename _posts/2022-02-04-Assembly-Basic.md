@@ -128,6 +128,7 @@ AL 값을 [ES:EDI]에 저장. 이후 DF에 따라 EDI를 변경. 외에도 STOSW
 6. PUSH   
 <img width="733" alt="Push Operation" src="https://user-images.githubusercontent.com/45323902/152172318-51dcc031-08fd-4ee1-864d-179fd8f0cfe0.png">   
 오퍼랜드의 값을 스택에 넣는다. 그 후 ESP를 감소시킨다.
+
 스택은 자랄수록 주소가 줄어든다. 그래서 스택은 위로 자란다(?).
 {: .notice--danger}
 
