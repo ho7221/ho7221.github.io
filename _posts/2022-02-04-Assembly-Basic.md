@@ -130,7 +130,8 @@ AT&T 방식에서 Mov에 l을 붙이는 이유는 오퍼랜드의 다룰 데이�
     <img width="733" alt="Push Operation" src="https://user-images.githubusercontent.com/45323902/152172318-51dcc031-08fd-4ee1-864d-179fd8f0cfe0.png">   
     오퍼랜드의 값을 스택에 넣는다. 그 후 ESP를 감소시킨다. 
     
-    중요한 점은 스택은 자랄수록 주소가 줄어든다. 그래서 스택은 위로 자란다(?).{: .info--danger}
+    중요한 점은 스택은 자랄수록 주소가 줄어든다. 그래서 스택은 위로 자란다(?).
+    {: .info--danger}
 
 7. POP
     <img width="881" alt="Before Popping Doubleword" src="https://user-images.githubusercontent.com/45323902/153809774-64b0029e-e79e-4f11-904e-9140674d6c4a.png">
