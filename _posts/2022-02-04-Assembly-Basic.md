@@ -61,8 +61,8 @@ toc_icon: "bars"
 어셈블리어는 AT&T 방식과 Intel 방식이 있다. 주로 Intel 방식을 이용한다.
 
 Example 1. 값 대입   
->Intel : mov eax, 5   
->AT&T : mov $5, %eax
+    >Intel : mov eax, 5   
+    >AT&T : mov $5, %eax
 
 Intel 방식은 자연스럽게 해석하면 되고 오른쪽을 왼쪽으로 대입한다.  
 AT&T 방식은 레지스터는 %, 정수값은 $ 를 붙여서 나타낸다. 또한 왼쪽을 오른쪽에 대입한다. 
@@ -121,22 +121,24 @@ AT&T 방식에서 Mov에 l을 붙이는 이유는 오퍼랜드의 다룰 데이�
     >xchg arg1, arg2 // 두 오퍼랜드의 값을 교환한다.  
 
 4. LODSB(Load Byte String)
-[DS:ESI] 내용을 Byte(8bit)만큼 메모리를 읽어와 AL에 저장. 후에 DF(Direction Flag)에 따라 ESI를 변경. 외에도 LODSW, LODSD 등이 있다.  
+    [DS:ESI] 내용을 Byte(8bit)만큼 메모리를 읽어와 AL에 저장. 후에 DF(Direction Flag)에 따라 ESI를 변경. 외에도 LODSW, LODSD 등이 있다.  
 
 5. STOSB(Store Byte String)
-AL 값을 [ES:EDI]에 저장. 이후 DF에 따라 EDI를 변경. 외에도 STOSW, STOSD 등이 있다.
+    AL 값을 [ES:EDI]에 저장. 이후 DF에 따라 EDI를 변경. 외에도 STOSW, STOSD 등이 있다.
 
 6. PUSH   
-<img width="733" alt="Push Operation" src="https://user-images.githubusercontent.com/45323902/152172318-51dcc031-08fd-4ee1-864d-179fd8f0cfe0.png">   
-오퍼랜드의 값을 스택에 넣는다. 그 후 ESP를 감소시킨다. 중요하 점은 스택은 자랄수록 주소가 줄어든다. 그래서 스택은 위로 자란다(?).
+    <img width="733" alt="Push Operation" src="https://user-images.githubusercontent.com/45323902/152172318-51dcc031-08fd-4ee1-864d-179fd8f0cfe0.png">   
+    오퍼랜드의 값을 스택에 넣는다. 그 후 ESP를 감소시킨다. 
+    
+    중요한 점은 스택은 자랄수록 주소가 줄어든다. 그래서 스택은 위로 자란다(?).{: .info--danger}
 
 7. POP
-<img width="881" alt="Before Popping Doubleword" src="https://user-images.githubusercontent.com/45323902/153809774-64b0029e-e79e-4f11-904e-9140674d6c4a.png">
-PUSH와 반대로 스택의 최상단의 값을 오퍼랜드에 대입한다. ESP는 증가한다.  
+    <img width="881" alt="Before Popping Doubleword" src="https://user-images.githubusercontent.com/45323902/153809774-64b0029e-e79e-4f11-904e-9140674d6c4a.png">
+    PUSH와 반대로 스택의 최상단의 값을 오퍼랜드에 대입한다. ESP는 증가한다.  
 
 8. Jxx
-분기명령으로 Jmp, Jne, Jbe 등 Jxx 이전의 비교구문에 따른 ZF, CF 등 플래그에 따라 특정 분기로 이동한다. 
+    분기명령으로 Jmp, Jne, Jbe 등 Jxx 이전의 비교구문에 따른 ZF, CF 등 플래그에 따라 특정 분기로 이동한다. 
 
 9. CALL, RET
-CALL은 특정 주소나 프로시저로 EIP를 이동시키며 돌아올 주소를 스택에 PUSH한다. RET는 POP EIP를 통해 EIP를 복원시킨다.
+    CALL은 특정 주소나 프로시저로 EIP를 이동시키며 돌아올 주소를 스택에 PUSH한다. RET는 POP EIP를 통해 EIP를 복원시킨다.
 
