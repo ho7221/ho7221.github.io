@@ -55,9 +55,8 @@ __asm__(
   
 2. 파일경로 push  
   먼저 12번부터 16번까지는 stack에 file location을 string의 형태로 넣었다. 우연인지 파일 경로가 8byte에 맞아 떨어지므로 \0을 마지막에 넣어주기 위해 0을 먼저 push해주었다.   
+  이때 shell code에는 \x00이 포함되면 안되므로 **mov rax,0x0** 이 아닌 **xor rax,rax**를 해준것이다.
   
-  shell code에는 \x00이 포함되면 안되므로 **mov rax,0x0** 이 아닌 **xor rax,rax**를 해준것이다.  
-  {: .notice--danger}
 3. system call  
   그 이후에는 SYS_OPEN의 변수에 맞게 넣어주면 된다. **SYS_OPEN(const char \*filename,int flags,umode_t mode)** 에 flags=0, mode=null 을 넣어준 것이다.   
   나머지 **SYS_READ(unsigned int fd,char \*buf,size_t count)**, **SYS_WRITE(unsigned int fd,char \*buf,size_t count)** 함수의 parameter에 맞게 넣어주면 된다.  
