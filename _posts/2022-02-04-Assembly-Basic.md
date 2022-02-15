@@ -114,16 +114,16 @@ AT&T 방식에서 Mov에 l을 붙이는 이유는 오퍼랜드의 다룰 데이�
 
 2. LEA(Load Effective Address)  
     Effective Address(유효주소)는 Segment+Counter+Offset의 형태로 계산된 선형주소를 의미한다. 따라서 LEA는 EA를 계산, 대입하는 명령어이다.  
-    >LEA DEST,SRC // src의 주소를 계산해 주소를 dest에 load한다.  
-    >LEA EAX,[ESP+ECX*4+0x40] 처럼 주소를 계산하고 그 주소를 EAX에 load한다.  
+    > - LEA DEST,SRC // src의 주소를 계산해 주소를 dest에 load한다.  
+    > - LEA EAX,[ESP+ECX*4+0x40] 처럼 주소를 계산하고 그 주소를 EAX에 load한다.  
 
 3. XCHG(Exchange)  
     >xchg arg1, arg2 // 두 오퍼랜드의 값을 교환한다.  
 
-4. LODSB(Load Byte String)
+4. LODSB(Load Byte String)  
     [DS:ESI] 내용을 Byte(8bit)만큼 메모리를 읽어와 AL에 저장. 후에 DF(Direction Flag)에 따라 ESI를 변경. 외에도 LODSW, LODSD 등이 있다.  
 
-5. STOSB(Store Byte String)
+5. STOSB(Store Byte String)  
     AL 값을 [ES:EDI]에 저장. 이후 DF에 따라 EDI를 변경. 외에도 STOSW, STOSD 등이 있다.
 
 6. PUSH   
