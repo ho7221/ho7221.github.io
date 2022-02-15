@@ -1,6 +1,7 @@
 ---
 title: "[pwn]shell-basic"
-category: Pwnable
+category: CTF
+tags: [pwnable]
 excerpt: "dreamhack shell-basic writeup"
 toc: true
 toc_label: "Table of Contents"
