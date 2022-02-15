@@ -81,7 +81,6 @@ __asm__(
 	p.send(exploit)
 	p.interactive()
   ~~~
-
   script를 이용해 shellcode를 전달하면 함수 내부에서 shellcode를 메모리에 넣고 실행하게 된다.  
   <img width="725" alt="script exec" src="https://user-images.githubusercontent.com/45323902/154060282-9a3a8081-505a-4e1f-b5fe-d719bde16195.png">  
   이때 flag이후에 다른 값이 나오는 이유는 buf size가 0x30인데 flag가 그보다 짧아 메모리에 있는 다른 내용까지 출력하게 된 것이다.
