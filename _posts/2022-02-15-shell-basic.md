@@ -1,10 +1,13 @@
 ---
 title: "[pwn]shell-basic"
+category: Pwnable
+excerpt: "dreamhack shell-basic writeup"
 toc:true
 toc_label: "Table of Contents"
 toc_sticky: true
 toc_icon: "bars"
 ---
+
 # shell-basic
 처음 풀어보는 포너블 문제라 감도 안왔지만 튜토리얼로 어느정도는 따라갈 수 있었다. 
 ## assembly
@@ -46,6 +49,7 @@ __asm__(
 	"add rax,0x1\n"
         "syscall");
 ~~~
+
 1. 환경 조사
 	*file shell_basic* 을 통해 환경을 먼저 조사한다. amd64 환경인 것을 알 수 있다.   
 2. 파일경로 push
@@ -71,7 +75,8 @@ __asm__(
 	p.send(exploit)
 	p.interactive()
 	~~~
-	이처럼 python script를 이용해 shellcode를 전달하면 함수 내부에서 shellcode를 메모리에 넣고 실행하게 된다.
-	<img width="725" alt="script exec" src="https://user-images.githubusercontent.com/45323902/154001147-99dffd0e-0229-4787-888c-b8560b906d1e.png">
+
+	이처럼 python script를 이용해 shellcode를 전달하면 함수 내부에서 shellcode를 메모리에 넣고 실행하게 된다.  
+	<img width="725" alt="script exec" src="https://user-images.githubusercontent.com/45323902/154001147-99dffd0e-0229-4787-888c-b8560b906d1e.png">  
 	여기서 flag이후 다른 문자열이 나오는 이유는 buf size가 0x30인데 flag가 그보다 짧아 메모리에 있는 다른 내용까지 출력하게 된 것이다.
 
