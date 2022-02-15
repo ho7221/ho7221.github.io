@@ -50,22 +50,23 @@ __asm__(
 	"add rax,0x1\n"
         "syscall");
 ~~~
+
 ## 풀이
-1. 환경 조사
+1. 환경 조사  
 **file shell_basic** 을 통해 환경을 먼저 조사한다. amd64 환경인 것을 알 수 있다.   
-2. 파일경로 push
+2. 파일경로 push  
 먼저 12번부터 16번까지는 stack에 file location을 string의 형태로 넣었다. 우연인지 파일 경로가 8byte에 맞아 떨어지므로 \0을 마지막에 넣어주기 위해 0을 먼저 push해주었다.   
 이때 shell code에는 \x00이 포함되면 안되므로 mov rax,0x0보다는 xor rax,rax를 해주는 것이 맞다.  
-3. system call
+3. system call  
 그 이후에는 SYS_OPEN의 변수에 맞게 넣어주면 된다. SYS_OPEN(const char \*filename,int flags,umode_t mode)에 flags=0, mode=null 을 넣어준 것이다.   
 나머지 SYS_READ(unsigned int fd,char \*buf,size_t count), SYS_WRITE(unsigned int fd,char \*buf,size_t count) 함수의 parameter에 맞게 넣어주면 된다.  
-4. gcc
+4. gcc  
 **gcc -o orw orw.c -masm=intel** 명령어를 통해 컴파일한다.  
-5. objdump
+5. objdump  
 **objdump -d ./orw** 명령어로 opcode를 추출한다.   
 <img width="605" alt="opcode" src="https://user-images.githubusercontent.com/45323902/154000690-ae589c0c-4fb5-46fa-823f-0cd0e2fd155d.png">  
 여기서 마지막 syscall까지만 추출하면 된다.  
-6. script
+6. script  
 ~~~
 	from pwn import *
 
