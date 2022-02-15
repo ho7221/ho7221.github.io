@@ -2,7 +2,7 @@
 title: "[pwn]shell-basic"
 category: Pwnable
 excerpt: "dreamhack shell-basic writeup"
-toc:true
+toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
 toc_icon: "bars"
