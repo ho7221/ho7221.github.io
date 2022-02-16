@@ -10,10 +10,8 @@ toc_icon: "bars"
 ---
 
 처음 풀어보는 포너블 문제라 감도 안왔지만 튜토리얼로 어느정도는 따라갈 수 있었다. 파일 경로가 길어졌다는 것을 제외하면 같은 방식이다.
-
 ## 환경조사  
-  amd64 LE 환경이다. 
-  
+  amd64 LE  
 ## Assembly 작성
   ~~~
 __asm__(
@@ -58,15 +56,12 @@ __asm__(
   
   이때 shell code에는 \x00이 포함되면 안되므로 **mov rax,0x0** 이 아닌 **xor rax,rax**를 해준것이다.
   {: .notice--danger}
-  
 ## gcc  
   **gcc -o orw orw.c -masm=intel** 명령어를 통해 컴파일한다.  
-  
 ## objdump  
   **objdump -d ./orw** 명령어로 opcode를 추출한다.  
   <img width="605" alt="opcode" src="https://user-images.githubusercontent.com/45323902/154000690-ae589c0c-4fb5-46fa-823f-0cd0e2fd155d.png">  
   여기서 마지막 syscall(\x0f\x05)까지만 추출하면 된다.  
-  
 ## script 작성
   ~~~
 	from pwn import *
