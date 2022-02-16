@@ -9,9 +9,13 @@ toc_sticky: true
 toc_icon: "bars"
 ---
 
-처음 풀어보는 포너블 문제라 감도 안왔지만 튜토리얼로 어느정도는 따라갈 수 있었다. 파일 경로가 길어졌다느 것을 제외하면 같은 방식이다.
-## assembly code
-~~~
+처음 풀어보는 포너블 문제라 감도 안왔지만 튜토리얼로 어느정도는 따라갈 수 있었다. 파일 경로가 길어졌다는 것을 제외하면 같은 방식이다.
+
+## 환경조사  
+  amd64 LE 환경이다. 
+  
+## Assembly 작성
+  ~~~
 __asm__(
 	".global main\n"
         "main:\n"
@@ -48,28 +52,22 @@ __asm__(
 	"xor rax,rax\n"
 	"add rax,0x1\n"
         "syscall");
-~~~
-## 풀이
-1. 환경조사  
-  **file shell_basic** 을 통해 환경을 먼저 조사한다. amd64 환경인 것을 알 수 있다.  
+  ~~~
+  먼저 stack에 file location을 string의 형태로 넣었다. 파일 경로가 8byte에 맞아 떨어지므로 \0을 마지막에 넣어주기 위해 0을 먼저 push해주었다.   
+  그 이후에는 SYSCALL 함수의 parameter에 따라 변수를 넣어준다. **SYS_OPEN(const char \*filename,int flags,umode_t mode)** 에 flags=0, mode=null 을 넣어준다. **SYS_READ(unsigned int fd,char \*buf,size_t count)**, **SYS_WRITE(unsigned int fd,char \*buf,size_t count)** 함수의 parameter에 맞게 넣어주면 된다.  
   
-2. 파일경로 push  
-  먼저 12번부터 16번까지는 stack에 file location을 string의 형태로 넣었다. 우연인지 파일 경로가 8byte에 맞아 떨어지므로 \0을 마지막에 넣어주기 위해 0을 먼저 push해주었다.   
   이때 shell code에는 \x00이 포함되면 안되므로 **mov rax,0x0** 이 아닌 **xor rax,rax**를 해준것이다.
+  {: .notice--danger}
   
-3. system call  
-  그 이후에는 SYS_OPEN의 변수에 맞게 넣어주면 된다. **SYS_OPEN(const char \*filename,int flags,umode_t mode)** 에 flags=0, mode=null 을 넣어준 것이다.   
-  나머지 **SYS_READ(unsigned int fd,char \*buf,size_t count)**, **SYS_WRITE(unsigned int fd,char \*buf,size_t count)** 함수의 parameter에 맞게 넣어주면 된다.  
-  
-4. gcc  
+## gcc  
   **gcc -o orw orw.c -masm=intel** 명령어를 통해 컴파일한다.  
   
-5. objdump  
+## objdump  
   **objdump -d ./orw** 명령어로 opcode를 추출한다.  
   <img width="605" alt="opcode" src="https://user-images.githubusercontent.com/45323902/154000690-ae589c0c-4fb5-46fa-823f-0cd0e2fd155d.png">  
   여기서 마지막 syscall(\x0f\x05)까지만 추출하면 된다.  
   
-6. script  
+## script 작성
   ~~~
 	from pwn import *
 
