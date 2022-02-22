@@ -1,6 +1,6 @@
 ---
 Title : "[Reversing]Shell Clam"
-Category : CTF
+categories : CTF
 tags : [Reversing]
 excerpt : "Dreamhack Shell Clam"
 toc : true
