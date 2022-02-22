@@ -18,6 +18,7 @@ main 함수는 argv[1]에 shellcode, argv[2]부터 server.py의 prob를 입력�
 만약 제대로 shellcode가 호출되면 shellcode 함수의 return값이 return 될것이고 seccomp에 걸리는 등의 오류가 생긴다면 음수의 return값이 나올것이다.
 
 만약 -11이 나온다면 SegFault오류이니 seccomp에 위반되는 함수를 사용했는지 확인하자. 
+{: .notice--info}
 ## 3. Shellcode
 ~~~
 int foo(int argc, char* argv[]){
