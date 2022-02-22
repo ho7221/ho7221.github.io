@@ -1,6 +1,7 @@
 ---
-Title : "[Reversing] Shell Clam"
-Category : "CTF"
+Title : "[Reversing]Shell Clam"
+Category : CTF
+tags : [Reversing]
 excerpt : "Dreamhack Shell Clam"
 toc : true
 toc_label : "Table of Contents"
