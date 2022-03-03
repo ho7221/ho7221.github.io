@@ -1,5 +1,5 @@
 ---
-title: "Who Am I"
+title: "$whoami"
 permalink: /about/
 layout: single
 ---
