@@ -1,0 +1,13 @@
+---
+layout: archive
+permalink: /COSE361/
+title: Computer System Design
+---
+
+<div id="archives">
+	{% for post in site.categories["COSE-361"] %}
+	<article class="archive-item">
+		<h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+	</article>
+	{% endfor %}
+</div>
