@@ -54,7 +54,7 @@ __asm__(
   먼저 stack에 file location을 string의 형태로 넣었다. 파일 경로가 8byte에 맞아 떨어지므로 \0을 마지막에 넣어주기 위해 0을 먼저 push해주었다.   
   그 이후에는 SYSCALL 함수의 parameter에 따라 변수를 넣어준다. **SYS_OPEN(const char \*filename,int flags,umode_t mode)** 에 flags=0, mode=null 을 넣어준다. **SYS_READ(unsigned int fd,char \*buf,size_t count)**, **SYS_WRITE(unsigned int fd,char \*buf,size_t count)** 함수의 parameter에 맞게 넣어주면 된다.  
   
-  shell code에는 \x00이 포함되면 안되므로 **mov rax,0x0** 이 아닌 **xor rax,rax**를 해주어야 한다. **mov rax,0x1**도 마찬가지로 0x1이 64bit size에 맞춰 0x01000000이 된다. 따라서 xor과 add를 통해 입력한다.
+  shell code에는 숫자가 ascii로 들어가므로 **mov rax,0** 이 아닌 **mov rax,0x00** 이나 **xor rax,rax**를 해주어야 한다.
   {: .notice--danger}
 ## OPcode 추출
   **gcc -o orw orw.c -masm=intel** 명령어를 통해 컴파일 후 **objdump -d ./orw** 명령어로 opcode를 추출한다.  
