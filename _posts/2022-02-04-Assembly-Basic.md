@@ -31,7 +31,7 @@ toc_icon: "bars"
 7. EBP(Base Pointer Register): SS에 속한 stack base pointer. stack frame의 base pointer이다.
 8. ESP(Stack Pointer Register): SS에 속한 stack pointer. 유동적인 stack pointer이다. EBP와 ESP는 function call 방식에서 다시 다룬다.
 
-각 레지스터는 기본적으로 특정 세그먼트를 기본값으로 가진다. 자세한 내용은 [Segment](https://ho7221.github.io/operating%20system/Segment/)에 있다.
+각 레지스터는 기본적으로 특정 세그먼트를 기본값으로 가진다. 자세한 내용은 [Segment](https://ho7221.github.io/os/Segment/)에 있다.
 {: .notice--info}
 ### Segment Register(16-bit)
 세그먼트는 말 그대로 메모리의 조각을 말하는데, 실제 메모리 공간을 여러 부분으로 나누어 관리하는 방식이다.  
