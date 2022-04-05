@@ -1,5 +1,5 @@
 ---
-title : "[Reversing]Shell Clam"
+title : "[RE]Shell Clam"
 categories : CTF
 tags : [Reversing]
 excerpt : "Dreamhack Shell Clam"
