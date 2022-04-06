@@ -35,7 +35,7 @@ toc_icon: "bars"
 {: .notice--info}
 ### Segment Register(16-bit)
 세그먼트는 말 그대로 메모리의 조각을 말하는데, 실제 메모리 공간을 여러 부분으로 나누어 관리하는 방식이다.  
-자세한 내용은 [Segment](https://ho7221.github.io/operating%20system/Segment/)을 참조하자.  
+자세한 내용은 [Segment](https://ho7221.github.io/os/Segment/)을 참조하자.  
 1. CS : Code Segment
 2. DS : Data Segment
 3. SS : Stack Segment
